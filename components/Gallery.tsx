@@ -8,26 +8,26 @@ const galleryImages = [
   {
     category: 'Ambience',
     images: [
-      { src: '/heritage-joysagar/ambience/interior.jpg', alt: 'Elegant interior dining area' },
-      { src: '/heritage-joysagar/ambience/interior2.jpg', alt: 'Heritage-inspired interior design' },
-      { src: '/heritage-joysagar/ambience/night-view.jpg', alt: 'Night view of lakeside dining' },
-      { src: '/heritage-joysagar/hero/outdoor-seating.jpg', alt: 'Outdoor seating by the lake' },
+      { src: '/Images/ambience/interior.jpg', alt: 'Elegant interior dining area' },
+      { src: '/Images/ambience/interior2.jpg', alt: 'Heritage-inspired interior design' },
+      { src: '/Images/ambience/night-view.jpg', alt: 'Night view of lakeside dining' },
+      { src: '/Images/hero/outdoor-seating.jpg', alt: 'Outdoor seating by the lake' },
     ]
   },
   {
     category: 'Signature Dishes',
     images: [
-      { src: '/heritage-joysagar/food/biriyani.jpg', alt: 'Signature Chicken Biryani' },
-      { src: '/heritage-joysagar/food/kadhai-chicken.jpg', alt: 'Kadhai Chicken' },
-      { src: '/heritage-joysagar/food/meat.jpg', alt: 'Special Meat Curry' },
-      { src: '/heritage-joysagar/food/pick-me-up_starter.jpg', alt: 'Assorted Starters Platter' },
+      { src: '/Images/food/biriyani.jpg', alt: 'Signature Chicken Biryani' },
+      { src: '/Images/food/kadhai-chicken.jpg', alt: 'Kadhai Chicken' },
+      { src: '/Images/food/meat.jpg', alt: 'Special Meat Curry' },
+      { src: '/Images/food/pick-me-up_starter.jpg', alt: 'Assorted Starters Platter' },
     ]
   },
   {
     category: 'Lakeside Views',
     images: [
-      { src: '/heritage-joysagar/hero/lakeside-view.jpg', alt: 'Serene lakeside view' },
-      { src: '/heritage-joysagar/hero/outdoor-seating.jpg', alt: 'Outdoor dining setup' },
+      { src: '/Images/hero/lakeside-view.jpg', alt: 'Serene lakeside view' },
+      { src: '/Images/hero/outdoor-seating.jpg', alt: 'Outdoor dining setup' },
     ]
   }
 ]

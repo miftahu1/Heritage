@@ -125,14 +125,14 @@ export default function ReservationCTA() {
                   value={formData.date}
                   onChange={handleChange}
                   required
-                  className="w-full px-6 py-4 border border-amber-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent text-gray-400"
+                  className="w-full px-6 py-4 border border-amber-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
                 />
                 <select 
                   name="time"
                   value={formData.time}
                   onChange={handleChange}
                   required
-                  className="w-full px-6 py-4 border border-amber-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent text-gray-400"
+                  className="w-full px-6 py-4 border border-amber-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
                 >
                   <option value="">Select Time</option>
                   <option value="08:00">08:00 AM</option>
@@ -148,7 +148,7 @@ export default function ReservationCTA() {
                   value={formData.guests}
                   onChange={handleChange}
                   required
-                  className="w-full px-6 py-4 border border-amber-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent text-gray-400"
+                  className="w-full px-6 py-4 border border-amber-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
                 >
                   <option value="1">1 Person</option>
                   <option value="2">2 People</option>

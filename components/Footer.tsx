@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { 
   MapPin, 
   Phone, 
@@ -108,9 +109,7 @@ export default function Footer() {
           {/* Brand & Description */}
           <div>
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-restaurant-amber-500 rounded-full flex items-center justify-center">
-                <span className="font-playfair text-xl font-bold text-restaurant-emerald-900">HJ</span>
-              </div>
+              <Image src='/Images/logo.png' alt="Heritage Jaysagar" width={48} height={48} className="rounded-full border border-black" />
               <div>
                 <h2 className="font-playfair text-2xl">Heritage Jaysagar</h2>
                 <p className="text-sm text-restaurant-amber-100">Since 2010</p>
@@ -198,10 +197,10 @@ export default function Footer() {
                 <div>
                   <p className="font-medium">Phone</p>
                   <a
-                    href="tel:+919999999999"
+                    href="tel:+919864020240"
                     className="text-restaurant-amber-100 hover:text-restaurant-amber-300 text-sm"
                   >
-                    +91 99999 99999
+                    +91 98640 20240
                   </a>
                 </div>
               </div>
@@ -307,9 +306,6 @@ export default function Footer() {
               <p className="text-restaurant-amber-200 text-sm">
                 © {new Date().getFullYear()} Heritage Jaysagar. All rights reserved.
               </p>
-              <p className="text-restaurant-amber-300 text-xs mt-1">
-                This is a demo preview website for portfolio purposes.
-              </p>
             </div>
 
             <div className="flex flex-wrap justify-center gap-4 text-sm text-restaurant-amber-200">
@@ -322,10 +318,15 @@ export default function Footer() {
               <Link href="/accessibility" className="hover:text-restaurant-amber-300 transition-colors">
                 Accessibility Statement
               </Link>
-              <span className="flex items-center">
-                <Heart size={12} className="mr-1 text-restaurant-amber-400" />
-                Made with passion
-              </span>
+              <a
+                href="https://miftadev.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: "none", color: "inherit" }}>
+                  Developed by ~Mifta
+              </a>
+
+
             </div>
 
             <div className="flex items-center space-x-4">

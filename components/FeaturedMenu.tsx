@@ -101,7 +101,7 @@ export default function FeaturedMenu() {
           </div>
           <div className="relative h-80 rounded-2xl overflow-hidden">
             <Image
-              src="/heritage-joysagar/ambience/dining-ambience.jpg"
+              src="/Images/ambience/dining-ambience.jpg"
               alt="Elegant dining ambience at Heritage Jaysagar"
               fill
               className="object-cover"

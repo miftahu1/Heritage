@@ -10,7 +10,7 @@ export default function Hero() {
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-emerald-900/40 z-10" />
         <Image
-          src="/heritage-joysagar/hero/lakeside-view.jpg"
+          src="/Images/hero/lakeside-view.jpg"
           alt="Heritage Jaysagar lakeside view"
           fill
           className="object-cover"

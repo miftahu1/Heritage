@@ -10,7 +10,7 @@ const featuredFood = [
     name: 'Signature Chicken Biryani',
     description: 'Aromatic basmati rice cooked with tender chicken, saffron, and royal spices',
     price: '₹450',
-    image: '/heritage-joysagar/food/biriyani.jpg',
+    image: '/Images/food/biriyani.jpg',
     rating: 4.9,
     prepTime: '25 mins',
     tags: ['Best Seller', 'Chef Special']
@@ -20,7 +20,7 @@ const featuredFood = [
     name: 'Kadhai Chicken',
     description: 'Succulent chicken pieces cooked in traditional kadhai with bell peppers and spices',
     price: '₹420',
-    image: '/heritage-joysagar/food/kadhai-chicken.jpg',
+    image: '/Images/food/kadhai-chicken.jpg',
     rating: 4.8,
     prepTime: '20 mins',
     tags: ['Spicy', 'Fresh']
@@ -30,7 +30,7 @@ const featuredFood = [
     name: 'Royal Meat Curry',
     description: 'Tender meat slow-cooked in rich gravy with aromatic spices',
     price: '₹480',
-    image: '/heritage-joysagar/food/meat.jpg',
+    image: '/Images/food/meat.jpg',
     rating: 4.7,
     prepTime: '30 mins',
     tags: ['Premium', 'Heritage Recipe']
@@ -40,7 +40,7 @@ const featuredFood = [
     name: 'Assorted Starters Platter',
     description: 'A delightful mix of vegetarian and non-vegetarian starters with dipping sauces',
     price: '₹380',
-    image: '/heritage-joysagar/food/pick-me-up_starter.jpg',
+    image: '/Images/food/pick-me-up_starter.jpg',
     rating: 4.9,
     prepTime: '15 mins',
     tags: ['Sharing', 'Perfect Starter']

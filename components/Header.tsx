@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Menu, X, MapPin, Phone } from 'lucide-react'
 
 export default function Header() {
@@ -17,9 +18,9 @@ export default function Header() {
   }, [])
 
   const navItems = [
-    { name: 'Home', href: '#home' },
+    { name: 'Home', href: '/' },
     { name: 'Highlights', href: '#highlights' },
-    { name: 'Menu', href: '#menu' },
+    { name: 'Menu', href: '/menu' },
     { name: 'Gallery', href: '#gallery' },
     { name: 'Testimonials', href: '#testimonials' },
     { name: 'Contact', href: '#reservations' },
@@ -49,10 +50,8 @@ export default function Header() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
-          <Link href="/heritage-joysagar" className="flex items-center space-x-3">
-            <div className="w-12 h-12 bg-emerald-800 rounded-full flex items-center justify-center">
-              <span className="font-playfair text-xl font-bold text-amber-100">HJ</span>
-            </div>
+          <Link href="/" className="flex items-center space-x-3">
+            <Image src='/Images/logo.png' alt="Heritage Jaysagar" width={48} height={48} className="rounded-full border border-black" />
             <div>
               <h1 className="font-playfair text-2xl font-bold text-emerald-900">Heritage Jaysagar</h1>
               <p className="text-xs text-emerald-700 flex items-center">
@@ -65,14 +64,21 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
             {navItems.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => scrollToSection(item.href)}
-                className="font-medium text-emerald-800 hover:text-emerald-600 transition-colors relative group py-2"
-              >
-                {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-600 group-hover:w-full transition-all duration-300"></span>
-              </button>
+              item.href.startsWith('/') ? (
+                <Link key={item.name} href={item.href} className="font-medium text-emerald-800 hover:text-emerald-600 transition-colors relative group py-2">
+                  {item.name}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-600 group-hover:w-full transition-all duration-300"></span>
+                </Link>
+              ) : (
+                <button
+                  key={item.name}
+                  onClick={() => scrollToSection(item.href)}
+                  className="font-medium text-emerald-800 hover:text-emerald-600 transition-colors relative group py-2"
+                >
+                  {item.name}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-600 group-hover:w-full transition-all duration-300"></span>
+                </button>
+              )
             ))}
             <a
               href="https://wa.me/919864020240"
@@ -99,13 +105,19 @@ export default function Header() {
           <nav className="md:hidden pb-4">
             <div className="flex flex-col space-y-3">
               {navItems.map((item) => (
-                <button
-                  key={item.name}
-                  onClick={() => scrollToSection(item.href)}
-                  className="text-emerald-800 hover:text-emerald-600 py-2 border-b border-amber-100 text-left"
-                >
-                  {item.name}
-                </button>
+                item.href.startsWith('/') ? (
+                  <Link key={item.name} href={item.href} className="text-emerald-800 hover:text-emerald-600 py-2 border-b border-amber-100 text-left" onClick={() => setIsMenuOpen(false)}>
+                    {item.name}
+                  </Link>
+                ) : (
+                  <button
+                    key={item.name}
+                    onClick={() => scrollToSection(item.href)}
+                    className="text-emerald-800 hover:text-emerald-600 py-2 border-b border-amber-100 text-left"
+                  >
+                    {item.name}
+                  </button>
+                )
               ))}
               <a
                 href="https://wa.me/919864020240"
