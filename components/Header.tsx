@@ -5,6 +5,42 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Menu, X, MapPin, Phone } from 'lucide-react'
 
+const navItems = [
+  { name: 'Home', href: '/' },
+  { name: 'Highlights', href: '#highlights' },
+  { name: 'Menu', href: '/menu' },
+  { name: 'Gallery', href: '#gallery' },
+  { name: 'Testimonials', href: '#testimonials' },
+  { name: 'Contact', href: '#reservations' },
+];
+
+const NavItem = ({ item, onClick, isMobile }: { item: typeof navItems[0], onClick: () => void, isMobile?: boolean }) => {
+  const isInternalLink = item.href.startsWith('/');
+  const commonClasses = "font-medium text-emerald-800 hover:text-emerald-600 transition-colors relative group py-2";
+  const mobileClasses = "py-2 border-b border-amber-100 text-left";
+
+  const content = (
+    <>
+      {item.name}
+      {!isMobile && <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-600 group-hover:w-full transition-all duration-300"></span>}
+    </>
+  )
+
+  if (isInternalLink) {
+    return (
+      <Link href={item.href} className={`${commonClasses} ${isMobile ? mobileClasses : ''}`} onClick={onClick}>
+        {content}
+      </Link>
+    )
+  }
+
+  return (
+    <button onClick={onClick} className={`${commonClasses} ${isMobile ? mobileClasses : ''}`}>
+      {content}
+    </button>
+  )
+}
+
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
@@ -17,39 +53,27 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const navItems = [
-    { name: 'Home', href: '/' },
-    { name: 'Highlights', href: '#highlights' },
-    { name: 'Menu', href: '/menu' },
-    { name: 'Gallery', href: '#gallery' },
-    { name: 'Testimonials', href: '#testimonials' },
-    { name: 'Contact', href: '#reservations' },
-  ]
-
   const scrollToSection = (sectionId: string) => {
-    const element = document.querySelector(sectionId)
+    const element = document.querySelector(sectionId);
     if (element) {
-      const headerHeight = 80
-      const elementPosition = element.getBoundingClientRect().top
-      const offsetPosition = elementPosition + window.pageYOffset - headerHeight
-      
+      const headerOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+  
       window.scrollTo({
         top: offsetPosition,
-        behavior: 'smooth'
-      })
+        behavior: "smooth"
+      });
     }
-    setIsMenuOpen(false)
+    setIsMenuOpen(false);
   }
 
+  const headerClasses = `sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-white/90 backdrop-blur-sm'}`;
+
   return (
-    <header className={`sticky top-0 z-50 transition-all duration-300 ${
-      isScrolled 
-        ? 'bg-white/95 backdrop-blur-md shadow-lg' 
-        : 'bg-white/90 backdrop-blur-sm'
-    }`}>
+    <header className={headerClasses}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between py-4">
-          {/* Logo */}
           <Link href="/" className="flex items-center space-x-3">
             <Image src='/Images/logo.png' alt="Heritage Jaysagar" width={48} height={48} className="rounded-full border border-black" />
             <div>
@@ -61,24 +85,9 @@ export default function Header() {
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6">
+          <nav className="hidden md:flex items-center space-x-6" aria-label="Main navigation">
             {navItems.map((item) => (
-              item.href.startsWith('/') ? (
-                <Link key={item.name} href={item.href} className="font-medium text-emerald-800 hover:text-emerald-600 transition-colors relative group py-2">
-                  {item.name}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-600 group-hover:w-full transition-all duration-300"></span>
-                </Link>
-              ) : (
-                <button
-                  key={item.name}
-                  onClick={() => scrollToSection(item.href)}
-                  className="font-medium text-emerald-800 hover:text-emerald-600 transition-colors relative group py-2"
-                >
-                  {item.name}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-600 group-hover:w-full transition-all duration-300"></span>
-                </button>
-              )
+              <NavItem key={item.name} item={item} onClick={() => !item.href.startsWith('/') && scrollToSection(item.href)} />
             ))}
             <a
               href="https://wa.me/919864020240"
@@ -91,39 +100,27 @@ export default function Header() {
             </a>
           </nav>
 
-          {/* Mobile menu button */}
           <button
             className="md:hidden text-emerald-800"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle mobile menu"
+            aria-expanded={isMenuOpen}
           >
             {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
 
-        {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden pb-4">
-            <div className="flex flex-col space-y-3">
+          <nav className="md:hidden pb-4 bg-white/95 backdrop-blur-md" aria-label="Mobile navigation">
+            <div className="flex flex-col space-y-3 px-4">
               {navItems.map((item) => (
-                item.href.startsWith('/') ? (
-                  <Link key={item.name} href={item.href} className="text-emerald-800 hover:text-emerald-600 py-2 border-b border-amber-100 text-left" onClick={() => setIsMenuOpen(false)}>
-                    {item.name}
-                  </Link>
-                ) : (
-                  <button
-                    key={item.name}
-                    onClick={() => scrollToSection(item.href)}
-                    className="text-emerald-800 hover:text-emerald-600 py-2 border-b border-amber-100 text-left"
-                  >
-                    {item.name}
-                  </button>
-                )
+                <NavItem key={item.name} item={item} isMobile onClick={() => item.href.startsWith('/') ? setIsMenuOpen(false) : scrollToSection(item.href)} />
               ))}
               <a
                 href="https://wa.me/919864020240"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-emerald-800 text-amber-50 px-6 py-3 rounded-full flex items-center justify-center space-x-2"
+                className="bg-emerald-800 text-amber-50 px-6 py-3 rounded-full flex items-center justify-center space-x-2 mt-2"
               >
                 <Phone size={16} />
                 <span>Order on WhatsApp</span>
