@@ -5,14 +5,14 @@ import FeaturedMenu from '@/components/FeaturedMenu';
 import FeaturedFood from '@/components/FeaturedFood';
 import Gallery from '@/components/Gallery';
 import Testimonials from '@/components/Testimonials';
-import ReservationCTA from '@/components/ReservationCTA';
+import Reservations from '@/components/Reservations';
 import Footer from '@/components/Footer';
 
 export default function HeritageJoysagarPage() {
   return (
     <>
       <Header />
-      <main className="bg-repeat font-sans text-restaurant-heritage-earth" style={{ backgroundImage: "url('/Images/background.png')" }}>
+      <main className="bg-repeat font-sans text-gray-800" style={{ backgroundImage: "url('/Images/background.png')" }}>
         <section id="home" aria-labelledby="hero-heading">
           <Hero />
         </section>
@@ -35,7 +35,7 @@ export default function HeritageJoysagarPage() {
         </section>
 
         <section id="reservations" aria-labelledby="reservations-heading">
-          <ReservationCTA />
+          <Reservations />
         </section>
       </main>
       <Footer />
