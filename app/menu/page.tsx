@@ -4,7 +4,8 @@ import { NextPage } from 'next';
 import Head from 'next/head';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { ChevronRight, Leaf, Star } from 'lucide-react';
+import { ChevronRight, Leaf, Star, Search } from 'lucide-react';
+import { useState } from 'react';
 
 interface MenuItem {
   name: string;
@@ -33,6 +34,19 @@ const menuItems: { [category: string]: MenuItem[] } = {
 };
 
 const MenuPage: NextPage = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const filteredMenuItems = Object.entries(menuItems).reduce((acc, [category, items]) => {
+    const filteredItems = items.filter(item =>
+      item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item.description.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    if (filteredItems.length > 0) {
+      acc[category] = filteredItems;
+    }
+    return acc;
+  }, {} as { [category: string]: MenuItem[] });
+
   return (
     <>
       <Head>
@@ -55,7 +69,20 @@ const MenuPage: NextPage = () => {
         </div>
 
         <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
-          {Object.entries(menuItems).map(([category, items]) => (
+          <div className="mb-12">
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="Search for your favorite dish..."
+                className="w-full p-4 pl-12 text-lg border-2 border-amber-400 rounded-full bg-white/90 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-6 h-6 text-amber-500" />
+            </div>
+          </div>
+
+          {Object.entries(filteredMenuItems).map(([category, items]) => (
             <section key={category} className="mb-16 last:mb-0 animate-slide-up">
               <h2 className="text-3xl md:text-4xl font-playfair font-semibold mb-8 text-emerald-800 border-b-2 border-amber-400 pb-3 flex items-center">
                 <ChevronRight className="w-8 h-8 mr-2 text-amber-500" />
