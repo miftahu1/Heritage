@@ -35,6 +35,7 @@ const menuItems: { [category: string]: MenuItem[] } = {
 
 const MenuPage: NextPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
+  const [isSearchVisible, setIsSearchVisible] = useState(false);
 
   const filteredMenuItems = Object.entries(menuItems).reduce((acc, [category, items]) => {
     const filteredItems = items.filter(item =>
@@ -69,16 +70,30 @@ const MenuPage: NextPage = () => {
         </div>
 
         <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
-          <div className="mb-12">
+          <div className="mb-12 flex justify-end">
             <div className="relative">
-              <input
-                type="text"
-                placeholder="Search for your favorite dish..."
-                className="w-full p-4 pl-12 text-lg border-2 border-amber-400 rounded-full bg-white/90 focus:outline-none focus:ring-2 focus:ring-amber-500"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-6 h-6 text-amber-500" />
+              {isSearchVisible ? (
+                <div className="relative"> 
+                  <input
+                    type="text"
+                    placeholder="Search for your favorite dish..."
+                    className="w-full p-4 pl-12 text-lg border-2 border-amber-400 rounded-full bg-white/90 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    onBlur={() => setIsSearchVisible(false)}
+                    autoFocus
+                  />
+                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-6 h-6 text-amber-500" />
+                </div>
+              ) : (
+                <button 
+                  onClick={() => setIsSearchVisible(true)} 
+                  className="flex items-center p-2 rounded-full hover:bg-amber-100"
+                >
+                  <Search className="w-8 h-8 text-amber-500" />
+                  <span className="ml-2 text-lg text-amber-500">Search</span>
+                </button>
+              )}
             </div>
           </div>
 
