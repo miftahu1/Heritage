@@ -186,16 +186,15 @@ const JoinUs = () => (
         <div className="container mx-auto px-4 py-16 md:py-20">
             <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-8">
                 <div>
-                    <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-2">Become a Part of Our Story</h2>
+                    <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-2">Our Story & Philosophy</h2>
                     <p className="text-amber-100 text-lg max-w-2xl">
-                        Experience the confluence of heritage and hospitality. We invite you to create lasting memories with us.
+                        Experience the confluence of heritage and hospitality, where authentic Assamese flavors meet timeless traditions.
                     </p>
                 </div>
                 <div className="mt-4 md:mt-0">
-                    <Link href="/#reservations" 
+                    <Link href="/menu" 
                         className="inline-flex items-center bg-restaurant-amber-500 text-restaurant-heritage-green px-8 py-4 rounded-full font-bold text-lg hover:bg-restaurant-amber-400 transition-colors shadow-lg transform hover:-translate-y-1 duration-300">
-                        Reserve Your Table
-                        <ArrowRight className="ml-3" size={22} />
+                        👉 Explore Our Menu
                     </Link>
                 </div>
             </div>
