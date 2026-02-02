@@ -10,7 +10,7 @@ import Footer from '@/components/Footer';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Heritage Jaysagar | Lakeside Dining in Sivasagar, Assam',
+    title: 'Heritage Joysagar | Lakeside Dining in Sivasagar, Assam',
     description: 'Experience authentic Assamese cuisine and warm hospitality at Heritage Jaysagar, a premier lakeside restaurant in Sivasagar, Assam. Book your table today!',
     openGraph: {
         title: 'Heritage Jaysagar | Lakeside Dining in Sivasagar, Assam',

@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { usePathname, useRouter } from 'next/navigation'
 import { Menu, X, MapPin, Phone } from 'lucide-react'
 import dynamic from 'next/dynamic'
 
@@ -10,42 +11,18 @@ const MobileMenu = dynamic(() => import('./MobileMenu'))
 
 const navItems = [
     { name: 'Home', href: '/' },
-    { name: 'Highlights', href: '#highlights' },
+    { name: 'Highlights', href: '/#highlights' },
     { name: 'Menu', href: '/menu' },
-    { name: 'Gallery', href: '#gallery' },
-    { name: 'Testimonials', href: '#testimonials' },
+    { name: 'Gallery', href: '/#gallery' },
+    { name: 'Testimonials', href: '/#testimonials' },
     { name: 'Contact', href: '/contact' },
 ];
-
-const NavItem = ({ item, onClick }: { item: typeof navItems[0], onClick: () => void }) => {
-    const isInternalLink = item.href.startsWith('/');
-    const commonClasses = "font-medium text-emerald-800 hover:text-emerald-600 transition-colors relative group py-2";
-
-    const content = (
-        <>
-            {item.name}
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-600 group-hover:w-full transition-all duration-300"></span>
-        </>
-    )
-
-    if (isInternalLink) {
-        return (
-            <Link href={item.href} className={commonClasses} onClick={onClick}>
-                {content}
-            </Link>
-        )
-    }
-
-    return (
-        <button onClick={onClick} className={commonClasses}>
-            {content}
-        </button>
-    )
-}
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [isScrolled, setIsScrolled] = useState(false)
+    const pathname = usePathname()
+    const router = useRouter()
 
     useEffect(() => {
         const handleScroll = () => {
@@ -54,11 +31,17 @@ export default function Header() {
         window.addEventListener('scroll', handleScroll)
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
+    
+    useEffect(() => {
+        if (isMenuOpen) {
+            setIsMenuOpen(false);
+        }
+    }, [pathname]);
 
     const scrollToSection = (sectionId: string) => {
         const element = document.querySelector(sectionId);
         if (element) {
-            const headerOffset = 80;
+            const headerOffset = 90;
             const elementPosition = element.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -67,15 +50,31 @@ export default function Header() {
                 behavior: "smooth"
             });
         }
-        setIsMenuOpen(false);
     }
 
-    const handleMobileLinkClick = (href: string) => {
-        if (href.startsWith('/')) {
+    const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        const isHashLink = href.startsWith('/#');
+        if (isHashLink && pathname === '/') {
+            e.preventDefault();
+            const sectionId = href.substring(1);
+            scrollToSection(sectionId);
             setIsMenuOpen(false);
         } else {
-            scrollToSection(href);
+            // Let the Link component handle navigation
+            setIsMenuOpen(false);
         }
+    };
+    
+    const handleMobileLinkClick = (href: string) => {
+        const isHashLink = href.startsWith('/#');
+
+        if (isHashLink && pathname === '/') {
+            const sectionId = href.substring(1);
+            scrollToSection(sectionId);
+        } else {
+            router.push(href);
+        }
+        setIsMenuOpen(false);
     };
 
 
@@ -98,7 +97,15 @@ export default function Header() {
 
                     <nav className="hidden md:flex items-center space-x-6" aria-label="Main navigation">
                         {navItems.map((item) => (
-                            <NavItem key={item.name} item={item} onClick={() => !item.href.startsWith('/') && scrollToSection(item.href)} />
+                           <Link
+                                key={item.name}
+                                href={item.href}
+                                onClick={(e) => handleNavClick(e, item.href)}
+                                className="font-medium text-emerald-800 hover:text-emerald-600 transition-colors relative group py-2"
+                            >
+                                {item.name}
+                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-600 group-hover:w-full transition-all duration-300"></span>
+                            </Link>
                         ))}
                         <a
                             href="https://wa.me/919864020240"
@@ -121,7 +128,7 @@ export default function Header() {
                     </button>
                 </div>
 
-                {isMenuOpen && <MobileMenu onLinkClick={handleMobileLinkClick} />}
+                {isMenuOpen && <MobileMenu navItems={navItems} onLinkClick={handleMobileLinkClick} />}
             </div>
         </header>
     )

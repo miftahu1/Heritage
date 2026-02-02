@@ -3,16 +3,17 @@
 import Link from 'next/link'
 import { Phone } from 'lucide-react'
 
-const navItems = [
-    { name: 'Home', href: '/' },
-    { name: 'Highlights', href: '#highlights' },
-    { name: 'Menu', href: '/menu' },
-    { name: 'Gallery', href: '#gallery' },
-    { name: 'Testimonials', href: '#testimonials' },
-    { name: 'Contact', href: '#reservations' },
-];
+interface NavItem {
+    name: string;
+    href: string;
+}
 
-const NavItem = ({ item, onClick }: { item: typeof navItems[0], onClick: () => void }) => {
+interface MobileMenuProps {
+    navItems: NavItem[];
+    onLinkClick: (href: string) => void;
+}
+
+const NavItem = ({ item, onClick }: { item: NavItem, onClick: () => void }) => {
     const isInternalLink = item.href.startsWith('/');
     const commonClasses = "font-medium text-emerald-800 hover:text-emerald-600 transition-colors relative group py-2";
     const mobileClasses = "py-2 border-b border-amber-100 text-left";
@@ -38,7 +39,7 @@ const NavItem = ({ item, onClick }: { item: typeof navItems[0], onClick: () => v
     )
 }
 
-export default function MobileMenu({ onLinkClick }: { onLinkClick: (href: string) => void }) {
+export default function MobileMenu({ navItems, onLinkClick }: MobileMenuProps) {
     return (
         <nav className="md:hidden pb-4 bg-white/95 backdrop-blur-md" aria-label="Mobile navigation">
             <div className="flex flex-col space-y-3 px-4">
