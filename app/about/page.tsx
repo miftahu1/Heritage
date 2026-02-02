@@ -9,6 +9,27 @@ import Footer from '@/components/Footer';
 export const metadata: Metadata = {
     title: 'About Us | Heritage Jaysagar',
     description: 'Learn about the story, values, and team behind Heritage Jaysagar, a premier lakeside dining destination in Sivasagar, Assam.',
+    openGraph: {
+        title: 'About Us | Heritage Jaysagar',
+        description: 'Learn about the story, values, and team behind Heritage Jaysagar, a premier lakeside dining destination in Sivasagar, Assam.',
+        url: 'https://heritage-jaysagar.com/about',
+        images: [
+            {
+                url: 'https://heritage-jaysagar.com/Images/ambience/interior-modern.jpg',
+                width: 1200,
+                height: 630,
+                alt: 'Modern and elegant interior of Heritage Jaysagar restaurant',
+            },
+        ],
+        locale: 'en_US',
+        type: 'website',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'About Us | Heritage Jaysagar',
+        description: 'Learn about the story, values, and team behind Heritage Jaysagar, a premier lakeside dining destination in Sivasagar, Assam.',
+        images: ['https://heritage-jaysagar.com/Images/ambience/interior-modern.jpg'],
+    },
 };
 
 
@@ -174,7 +195,7 @@ const MeetTheTeam = () => {
                             <p className="text-restaurant-heritage-gold font-semibold mb-2">{member.role}</p>
                             <p className="text-gray-600 text-sm leading-relaxed">{member.bio}</p>
                         </div>
-                    ))}
+                    ))};
                 </div>
             </div>
         </section>
