@@ -189,11 +189,12 @@ const BackToTopButton: FC = () => {
     const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
     return (
-        <button onClick={scrollToTop} className={`fixed bottom-6 right-6 w-12 h-12 bg-amber-500 text-emerald-900 rounded-full flex items-center justify-center shadow-lg hover:bg-amber-400 transition-all duration-300 z-50 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`} aria-label="Back to top">
+        <button onClick={scrollToTop} className={`fixed bottom-6 right-6 w-12 h-12 bg-amber-500 text-emerald-900 rounded-full flex-col items-center justify-center shadow-lg hover:bg-amber-400 transition-all duration-300 z-50 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'} hidden md:flex`} aria-label="Back to top">
             <ArrowUp size={24} />
         </button>
     );
 };
+
 
 // --- MAIN COMPONENT ---
 export default function Footer() {

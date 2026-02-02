@@ -111,7 +111,7 @@ export default function Reservations() {
                         <ReservationForm />
                     </div>
                     <div className="w-full lg:w-2/5 order-1 lg:order-2 flex flex-col items-center">
-                        <div className="relative w-full h-80 lg:h-96 rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500 ease-in-out">
+                        <div className="relative w-full h-80 lg:h-96 rounded-2xl overflow-hidden shadow-2xl">
                              <Image src="/Images/ambience/interior2.jpg" alt="Elegant restaurant interior" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 40vw" />
                         </div>
                          <ContactInfo />
