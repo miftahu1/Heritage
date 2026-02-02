@@ -15,12 +15,12 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: 'Heritage Jaysagar | Premium Lakeside Dining in Sivasagar, Assam',
-  description: 'Experience serene lakeside dining at Heritage Jaysagar. Authentic Assamese cuisine in a heritage-inspired setting with scenic views.',
-  keywords: ['Heritage Jaysagar', 'Sivasagar restaurant', 'lakeside dining', 'Assamese cuisine', 'fine dining Assam'],
+  title: 'Heritage Joysagar | Premium Lakeside Dining in Sivasagar, Assam',
+  description: 'Experience serene lakeside dining at Heritage Joysagar. Authentic Assamese cuisine in a heritage-inspired setting with scenic views.',
+  keywords: ['Heritage Joysagar', 'Sivasagar restaurant', 'lakeside dining', 'Assamese cuisine', 'fine dining Assam'],
   openGraph: {
-    title: 'Heritage Jaysagar | Premium Lakeside Dining',
-    description: 'Experience serene lakeside dining at Heritage Jaysagar. Authentic Assamese cuisine with scenic views.',
+    title: 'Heritage Joysagar | Premium Lakeside Dining',
+    description: 'Experience serene lakeside dining at Heritage Joysagar. Authentic Assamese cuisine with scenic views.',
     url: 'https://heritagejaysagar.com',
     type: 'website',
     locale: 'en_IN',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
         url: '/Images/og-image.jpg', // Add a suitable Open Graph image
         width: 1200,
         height: 630,
-        alt: 'Lakeside view of Heritage Jaysagar',
+        alt: 'Lakeside view of Heritage Joysagar',
       },
     ],
   },

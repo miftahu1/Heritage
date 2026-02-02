@@ -1,8 +1,8 @@
 ---
 
-# Heritage Jaysagar Restaurant Website
+# Heritage Joysagar Restaurant Website
 
-A modern, responsive, and performance-optimized website built for **Heritage Jaysagar Restaurant**.
+A modern, responsive, and performance-optimized website built for **Heritage Joysagar Restaurant**.
 Designed to provide a smooth user experience, fast loading times, and easy future maintenance.
 
 ---
@@ -122,7 +122,7 @@ You can easily:
 
 ## 📄 License
 
-This project is proprietary and developed exclusively for **Heritage Jaysagar Restaurant**.
+This project is proprietary and developed exclusively for **Heritage Joysagar Restaurant**.
 Reuse or redistribution without permission is not allowed.
 
 ---

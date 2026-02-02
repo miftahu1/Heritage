@@ -11,17 +11,17 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: 'Heritage Joysagar | Lakeside Dining in Sivasagar, Assam',
-    description: 'Experience authentic Assamese cuisine and warm hospitality at Heritage Jaysagar, a premier lakeside restaurant in Sivasagar, Assam. Book your table today!',
+    description: 'Experience authentic Assamese cuisine and warm hospitality at Heritage Joysagar, a premier lakeside restaurant in Sivasagar, Assam. Book your table today!',
     openGraph: {
-        title: 'Heritage Jaysagar | Lakeside Dining in Sivasagar, Assam',
-        description: 'Experience authentic Assamese cuisine and warm hospitality at Heritage Jaysagar, a premier lakeside restaurant in Sivasagar, Assam. Book your table today!',
+        title: 'Heritage Joysagar | Lakeside Dining in Sivasagar, Assam',
+        description: 'Experience authentic Assamese cuisine and warm hospitality at Heritage Joysagar, a premier lakeside restaurant in Sivasagar, Assam. Book your table today!',
         url: 'https://heritagejaysagar.com',
         images: [
             {
                 url: 'https://heritagejaysagar.com/Images/hero/lakeside-view.jpg',
                 width: 1200,
                 height: 630,
-                alt: 'Lakeside view of Heritage Jaysagar restaurant',
+                alt: 'Lakeside view of Heritage Joysagar restaurant',
             },
         ],
         locale: 'en_US',
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Heritage Jaysagar | Lakeside Dining in Sivasagar, Assam',
-        description: 'Experience authentic Assamese cuisine and warm hospitality at Heritage Jaysagar, a premier lakeside restaurant in Sivasagar, Assam. Book your table today!',
+        title: 'Heritage Joysagar | Lakeside Dining in Sivasagar, Assam',
+        description: 'Experience authentic Assamese cuisine and warm hospitality at Heritage Joysagar, a premier lakeside restaurant in Sivasagar, Assam. Book your table today!',
         images: ['https://heritagejaysagar.com/Images/hero/lakeside-view.jpg'],
     },
 };

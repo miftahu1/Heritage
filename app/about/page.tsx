@@ -7,18 +7,18 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-    title: 'About Us | Heritage Jaysagar',
-    description: 'Learn about the story, values, and team behind Heritage Jaysagar, a premier lakeside dining destination in Sivasagar, Assam.',
+    title: 'About Us | Heritage Joysagar',
+    description: 'Learn about the story, values, and team behind Heritage Joysagar, a premier lakeside dining destination in Sivasagar, Assam.',
     openGraph: {
-        title: 'About Us | Heritage Jaysagar',
-        description: 'Learn about the story, values, and team behind Heritage Jaysagar, a premier lakeside dining destination in Sivasagar, Assam.',
+        title: 'About Us | Heritage Joysagar',
+        description: 'Learn about the story, values, and team behind Heritage Joysagar, a premier lakeside dining destination in Sivasagar, Assam.',
         url: 'https://heritage-jaysagar.com/about',
         images: [
             {
                 url: 'https://heritage-jaysagar.com/Images/ambience/interior-modern.jpg',
                 width: 1200,
                 height: 630,
-                alt: 'Modern and elegant interior of Heritage Jaysagar restaurant',
+                alt: 'Modern and elegant interior of Heritage Joysagar restaurant',
             },
         ],
         locale: 'en_US',
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'About Us | Heritage Jaysagar',
-        description: 'Learn about the story, values, and team behind Heritage Jaysagar, a premier lakeside dining destination in Sivasagar, Assam.',
+        title: 'About Us | Heritage Joysagar',
+        description: 'Learn about the story, values, and team behind Heritage Joysagar, a premier lakeside dining destination in Sivasagar, Assam.',
         images: ['https://heritage-jaysagar.com/Images/ambience/interior-modern.jpg'],
     },
 };
@@ -53,7 +53,7 @@ const HeroSection = () => (
         <div className="absolute inset-0 z-0">
             <Image
                 src="/Images/ambience/interior-modern.jpg"
-                alt="Modern and elegant interior of Heritage Jaysagar restaurant"
+                alt="Modern and elegant interior of Heritage Joysagar restaurant"
                 fill
                 className="object-cover"
                 priority
@@ -66,7 +66,7 @@ const HeroSection = () => (
                 A Legacy of Taste, <br /> A Future of Hospitality
             </h1>
             <p className="text-lg md:text-xl text-amber-50 leading-relaxed">
-                Discover the story behind Heritage Jaysagar, where authentic Assamese flavors meet contemporary elegance on the serene banks of Joysagar.
+                Discover the story behind Heritage Joysagar, where authentic Assamese flavors meet contemporary elegance on the serene banks of Joysagar.
             </p>
         </div>
     </section>
@@ -81,20 +81,20 @@ const OurStory = () => (
                     <h2 className="font-playfair text-3xl md:text-4xl text-restaurant-heritage-green mb-6">Our Story: The Birth of a Culinary Dream</h2>
                     <div className="space-y-4 text-gray-700 leading-relaxed">
                         <p>
-                            Founded in 2010, Heritage Jaysagar began as a humble vision: to create a dining experience that paid homage to the rich culinary traditions of Assam while offering a tranquil escape from the everyday. Nestled by the historic Joysagar lake, our location was chosen to reflect the timeless beauty and serenity that our cuisine embodies.
+                            Founded in 2010, Heritage Joysagar began as a humble vision: to create a dining experience that paid homage to the rich culinary traditions of Assam while offering a tranquil escape from the everyday. Nestled by the historic Joysagar lake, our location was chosen to reflect the timeless beauty and serenity that our cuisine embodies.
                         </p>
                         <p>
                             Our founder, driven by a passion for authentic flavors and warm hospitality, envisioned a place where families, friends, and travelers could gather to enjoy meals that are both comforting and sophisticated. Over the years, we have grown from a small lakeside eatery into a celebrated culinary destination, known for our commitment to quality, heritage, and innovation.
                         </p>
                         <p>
-                            Every dish at Heritage Jaysagar tells a story—a story of our land, our people, and our unwavering dedication to the art of food.
+                            Every dish at Heritage Joysagar tells a story—a story of our land, our people, and our unwavering dedication to the art of food.
                         </p>
                     </div>
                 </div>
                 <div className="relative h-80 md:h-full rounded-2xl overflow-hidden shadow-restaurant-elegant animate-fade-in">
                     <Image
                         src="/Images/ambience/exterior-day.jpg"
-                        alt="Exterior view of Heritage Jaysagar on a bright day"
+                        alt="Exterior view of Heritage Joysagar on a bright day"
                         fill
                         className="object-cover"
                         sizes="(max-width: 768px) 100vw, 50vw"
