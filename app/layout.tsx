@@ -37,6 +37,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://heritagejaysagar.com',
   },
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RestaurantRootLayout({
