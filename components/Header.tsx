@@ -14,7 +14,7 @@ const navItems = [
     { name: 'Menu', href: '/menu' },
     { name: 'Gallery', href: '#gallery' },
     { name: 'Testimonials', href: '#testimonials' },
-    { name: 'Contact', href: '#reservations' },
+    { name: 'Contact', href: '/contact' },
 ];
 
 const NavItem = ({ item, onClick }: { item: typeof navItems[0], onClick: () => void }) => {

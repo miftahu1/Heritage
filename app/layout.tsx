@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Heritage Jaysagar | Premium Lakeside Dining',
     description: 'Experience serene lakeside dining at Heritage Jaysagar. Authentic Assamese cuisine with scenic views.',
-    url: 'https://your-production-url.com', // Replace with your actual URL
+    url: 'https://heritage-joysagar.com',
     type: 'website',
     locale: 'en_IN',
     images: [
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-  metadataBase: new URL('https://your-production-url.com'), // Replace with your actual URL
+  metadataBase: new URL('https://heritage-joysagar.com'),
 };
 
 export default function RestaurantRootLayout({

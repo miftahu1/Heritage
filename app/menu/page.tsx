@@ -53,6 +53,16 @@ const MenuPage: NextPage = () => {
       <Head>
         <title>Our Menu - Heritage Jaysagar</title>
         <meta name="description" content="Explore the exquisite flavors of Heritage Jaysagar."/>
+        <meta property="og:title" content="Our Menu - Heritage Jaysagar" />
+        <meta property="og:description" content="Explore the exquisite flavors of Heritage Jaysagar." />
+        <meta property="og:url" content="https://heritage-jaysagar.com/menu" />
+        <meta property="og:image" content="https://heritage-jaysagar.com/Images/food/pick-me-up_starter.jpg" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Our Menu - Heritage Jaysagar" />
+        <meta name="twitter:description" content="Explore the exquisite flavors of Heritage Jaysagar." />
+        <meta name="twitter:image" content="https://heritage-jaysagar.com/Images/food/pick-me-up_starter.jpg" />
       </Head>
       <Header />
 

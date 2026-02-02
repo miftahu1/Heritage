@@ -195,7 +195,7 @@ const MeetTheTeam = () => {
                             <p className="text-restaurant-heritage-gold font-semibold mb-2">{member.role}</p>
                             <p className="text-gray-600 text-sm leading-relaxed">{member.bio}</p>
                         </div>
-                    ))};
+                    ))}
                 </div>
             </div>
         </section>
