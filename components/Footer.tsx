@@ -168,8 +168,8 @@ const BottomBar: FC = () => (
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                 <p className="text-amber-200 text-xs md:text-sm text-center md:text-left">&copy; {new Date().getFullYear()} Heritage Jaysagar. All rights reserved.</p>
                 <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-xs text-amber-200">
-                    <Link href="/privacy" className="hover:text-amber-300 transition-colors">Privacy Policy</Link>
-                    <Link href="/terms" className="hover:text-amber-300 transition-colors">Terms of Service</Link>
+                    {/* <Link href="/privacy" className="hover:text-amber-300 transition-colors">Privacy Policy</Link>
+                    <Link href="/terms" className="hover:text-amber-300 transition-colors">Terms of Service</Link> */}
                     <a href="https://miftadev.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-amber-300 transition-colors">Developed by ~Mifta</a>
                 </div>
             </div>
