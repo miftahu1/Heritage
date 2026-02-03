@@ -1,20 +1,16 @@
----
-
 # Heritage Joysagar Restaurant Website
 
-A modern, responsive, and performance-optimized website built for **Heritage Joysagar Restaurant**.
-Designed to provide a smooth user experience, fast loading times, and easy future maintenance.
+A modern, responsive, and performance-optimized website for **Heritage Joysagar Restaurant**, built with Next.js and Tailwind CSS.
 
 ---
 
 ## 🚀 Tech Stack
 
-* **Next.js 14** (App Router)
-* **React 18**
-* **TypeScript**
-* **Tailwind CSS**
-* **PostCSS**
-* **ESLint**
+*   **Next.js** (App Router)
+*   **React 18**
+*   **TypeScript**
+*   **Tailwind CSS**
+*   **Static Site Generation (SSG)** for optimal performance.
 
 ---
 
@@ -23,30 +19,30 @@ Designed to provide a smooth user experience, fast loading times, and easy futur
 ```
 Heritage/
 ├── app/
+│   ├── about/
+│   │   └── page.tsx
+│   ├── contact/
+│   │   └── page.tsx
+│   ├── menu/
+│   │   └── page.tsx
 │   ├── layout.tsx
 │   ├── page.tsx
 │   └── globals.css
 │
 ├── components/
-│   ├── FeaturedFood
-│   ├── FeaturedMenu
-│   ├── Footer
-│   ├── Gallery
-│   ├── Header
-│   ├── Hero
-│   ├── Highlights
-│   ├── ReservationCTA
-│   └── Testimonials
+│   ├── Header.tsx
+│   ├── Footer.tsx
+│   ├── Hero.tsx
+│   ├── MenuPageClient.tsx
+│   ├── ContactPageClient.tsx
+│   └── ... (other reusable components)
 │
 ├── public/
-│   ├── images
-│   └── videos
+│   └── Images/
 │
+├── next.config.mjs
 ├── package.json
 ├── tailwind.config.ts
-├── postcss.config.js
-├── tsconfig.json
-├── next.config.js
 └── README.md
 ```
 
@@ -54,12 +50,11 @@ Heritage/
 
 ## ✨ Features
 
-* Fully responsive design (mobile, tablet, desktop)
-* Fast loading with optimized assets
-* Modular and reusable components
-* SEO-friendly structure
-* Easy content updates
-* Built to scale for the next 5 to 10 years
+*   Fully responsive design (mobile, tablet, desktop).
+*   Extremely fast loading times via Static Site Generation.
+*   Modular and reusable React components.
+*   SEO-friendly with metadata support for each page.
+*   Easy to update content and add new pages.
 
 ---
 
@@ -71,65 +66,37 @@ Heritage/
 npm install
 ```
 
-### 2. Start development server
+### 2. Start the development server
 
 ```bash
 npm run dev
 ```
 
-Open your browser and visit:
-
-```
-http://localhost:3000
-```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
 ## 🛠 Build for Production
 
+To create a production-ready static version of the site, run:
+
 ```bash
 npm run build
-npm start
 ```
+
+This command generates a static export of the website in the `out/` directory. This `out/` directory is what gets deployed for hosting.
 
 ---
 
 ## 🎨 Styling
 
-* Tailwind CSS is used for all styling
-* Global styles are located in `app/globals.css`
-* Custom colors and fonts are defined in `tailwind.config.ts`
-
----
-
-## 📈 Performance Notes
-
-* Components are dynamically imported where needed
-* Images and videos are optimized for web usage
-* Lighthouse and PageSpeed optimizations applied
-
----
-
-## 🔧 Customization
-
-You can easily:
-
-* Update text and images in components
-* Add new sections in the `components/` folder
-* Modify theme colors and fonts from `tailwind.config.ts`
+*   **Tailwind CSS** is used for all styling.
+*   Global styles and Tailwind directives are in `app/globals.css`.
+*   Theme customizations (colors, fonts) are defined in `tailwind.config.ts`.
 
 ---
 
 ## 📄 License
 
 This project is proprietary and developed exclusively for **Heritage Joysagar Restaurant**.
-Reuse or redistribution without permission is not allowed.
 
----
-
-## 🤝 Support
-
-Minor updates and fixes are supported as per the project agreement.
-For major feature requests, timelines and scope can be discussed separately.
-
----

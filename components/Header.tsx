@@ -11,10 +11,10 @@ const MobileMenu = dynamic(() => import('./MobileMenu'))
 
 const navItems = [
     { name: 'Home', href: '/' },
-    { name: 'Highlights', href: '/#highlights' },
     { name: 'Menu', href: '/menu' },
     { name: 'Gallery', href: '/#gallery' },
     { name: 'Testimonials', href: '/#testimonials' },
+    { name: 'About', href: '/about' },
     { name: 'Contact', href: '/contact' },
 ];
 
